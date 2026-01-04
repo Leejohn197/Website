@@ -12,15 +12,269 @@ import Footer from '../../components/common/Footer.astro';
   <Navbar />
   
   <main class="pt-20">
-    <!-- Page Header -->
-    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 text-center border-b-4 border-batik bg-batik">
+    <!-- Featured Events Section - Starts immediately after navbar -->
+    <section class="bg-gradient-to-br from-primary-900 to-primary-800 text-white section-padding border-b-4 border-batik">
       <div class="container-custom">
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Layanan Peserta Pameran</h1>
-        <p class="text-primary-100 text-lg md:text-xl max-w-3xl mx-auto">
-          Pamerkan produk dan layanan Anda kepada 50.000+ profesional bisnis dari seluruh Asia Tenggara
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
+          Pameran Unggulan
+        </h2>
+        <p class="text-center text-primary-100 mb-12 max-w-2xl mx-auto">
+          Acara pameran utama yang akan datang di Jakarta International Convention Center pada tahun 2026
         </p>
+
+        <!-- Row 1: First 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Event 1: Tech Expo -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/tech-expo.jpg" alt="Pameran Teknologi" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                TECHNOLOGY
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Pameran Teknologi Jakarta 2026</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>15-18 Maret 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Pamerkan elektronik canggih, AI, IoT...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Pamerkan elektronik canggih, AI, IoT, dan inovasi digital. Terhubung dengan pemimpin industri teknologi, startup, dan investor.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">AI & ML</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">IoT</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Cloud</span>
+            </div>
+          </div>
+
+          <!-- Event 2: Food & Beverage -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/food-beverage.jpg" alt="Pameran Makanan & Minuman" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                F&B
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Pameran Makanan & Minuman Indonesia</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>5-8 April 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Jakarta Convention Center</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Jelajahi warisan kuliner Indonesia yang kaya...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Jelajahi warisan kuliner Indonesia yang kaya dan tren makanan internasional. Dari makanan tradisional hingga minuman inovatif.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Kuliner Indonesia</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Internasional</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Minuman</span>
+            </div>
+          </div>
+
+          <!-- Event 3: Manufacturing -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/manufacturing.jpg" alt="Summit Manufaktur" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                MANUFACTURING
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Summit Manufaktur Asia Tenggara</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>12-15 Mei 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Jelajahi Industri 4.0, otomasi, dan solusi...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Jelajahi Industri 4.0, otomasi, dan solusi manufaktur pintar. Pamerkan mesin berat, teknologi produksi, dan inovasi rantai pasokan.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Otomasi</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Industri 4.0</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Mesin</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Next 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Event 4: Textile & Fashion -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/textile-fashion.jpg" alt="Pameran Tekstil & Fashion" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                FASHION
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Pameran Tekstil & Fashion Indonesia</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>10-13 Juni 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Pamerkan Batik, tekstil tradisional...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Pamerkan Batik, tekstil tradisional, dan desain fashion modern. Terhubung dengan desainer fashion, produsen tekstil, dan pengecer.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Batik</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Desain Fashion</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Tekstil</span>
+            </div>
+          </div>
+
+          <!-- Event 5: Automotive -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/automotive.jpg" alt="Pameran Otomotif" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                AUTOMOTIVE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Jakarta International Auto Show</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>20-23 Juli 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Jakarta Convention Center</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Tampilkan model mobil terbaru, kendaraan listrik...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Tampilkan model mobil terbaru, kendaraan listrik, sepeda motor, dan suku cadang otomotif. Hubungkan produsen, dealer, dan penggemar mobil.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Kendaraan Listrik</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Energi Hijau</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Suku Cadang</span>
+            </div>
+          </div>
+
+          <!-- Event 6: Healthcare & Medical -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/healthcare.jpg" alt="Pameran Kesehatan" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                HEALTHCARE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Pameran Kesehatan & Medis Asia Tenggara</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>15-18 Agustus 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <div class="relative group">
+              <p class="text-primary-100 text-sm leading-relaxed mb-4 line-clamp-2 cursor-help">
+                Pamerkan peralatan medis, produk farmasi...
+              </p>
+              <div class="absolute bottom-full left-0 mb-2 hidden group-hover:block w-64 bg-neutral-900 text-white text-xs rounded-lg p-3 shadow-xl z-10">
+                Pamerkan peralatan medis, produk farmasi, dan inovasi teknologi kesehatan. Bertemu dengan profesional kesehatan dan administrator rumah sakit.
+                <div class="absolute top-full left-4 -mt-1 border-4 border-transparent border-t-neutral-900"></div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Peralatan Medis</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Farmasi</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Teknologi Kesehatan</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Benefits Section -->
     <section class="bg-white section-padding">

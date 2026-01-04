@@ -12,15 +12,233 @@ import Footer from '../../components/common/Footer.astro';
   <Navbar />
   
   <main class="pt-20">
-    <!-- Page Header -->
-    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 text-center border-b-4 border-batik bg-batik">
+    <!-- Featured Events Section - Starts immediately after navbar -->
+    <section class="bg-gradient-to-br from-primary-900 to-primary-800 text-white section-padding border-b-4 border-batik">
       <div class="container-custom">
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Exhibitor Services</h1>
-        <p class="text-primary-100 text-lg md:text-xl max-w-3xl mx-auto">
-          Showcase your products and services to 50,000+ business professionals from across Southeast Asia
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-4">
+          Featured Events
+        </h2>
+        <p class="text-center text-primary-100 mb-12 max-w-2xl mx-auto">
+          Major exhibition events coming to Jakarta International Convention Center in 2026
         </p>
+
+        <!-- Row 1: First 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Event 1: Tech Expo -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/tech-expo.jpg" alt="Tech Expo" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                TECHNOLOGY
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Jakarta Tech Expo 2026</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>March 15-18, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Showcase cutting-edge electronics, AI, IoT, and digital innovations. Connect with tech industry leaders, startups, and investors.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">AI & ML</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">IoT</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Cloud</span>
+            </div>
+          </div>
+
+          <!-- Event 2: Food & Beverage -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/food-beverage.jpg" alt="Food & Beverage Fair" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                F&B
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Indonesia Food & Beverage Fair</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>April 5-8, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Jakarta Convention Center</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Explore Indonesia's rich culinary heritage and international food trends. From traditional delicacies to innovative beverages.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Indonesian Cuisine</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">International</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Beverages</span>
+            </div>
+          </div>
+
+          <!-- Event 3: Manufacturing -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/manufacturing.jpg" alt="Manufacturing Summit" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                MANUFACTURING
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Southeast Asia Manufacturing Summit</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>May 12-15, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Explore Industry 4.0, automation, and smart manufacturing solutions. Showcase heavy machinery, production technology, and supply chain innovations.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Automation</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Industry 4.0</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Machinery</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Next 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Event 4: Textile & Fashion -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/textile-fashion.jpg" alt="Textile & Fashion Expo" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                FASHION
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Indonesia Textile & Fashion Expo</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>June 10-13, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Showcase Batik, traditional textiles, and modern fashion designs. Connect with fashion designers, textile manufacturers, and retailers.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Batik</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Fashion Design</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Textiles</span>
+            </div>
+          </div>
+
+          <!-- Event 5: Automotive -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/automotive.jpg" alt="Automotive Expo" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                AUTOMOTIVE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Jakarta International Auto Show</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>July 20-23, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>Jakarta Convention Center</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Display latest car models, electric vehicles, motorcycles, and automotive parts. Connect manufacturers, dealers, and car enthusiasts.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Electric Vehicles</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Green Energy</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Auto Parts</span>
+            </div>
+          </div>
+
+          <!-- Event 6: Healthcare & Medical -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/healthcare.jpg" alt="Healthcare Expo" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                HEALTHCARE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3">Southeast Asia Healthcare & Medical Expo</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span>August 15-18, 2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span>JIExpo Kemayoran</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4">
+              Showcase medical equipment, pharmaceutical products, and health tech innovations. Meet healthcare professionals and hospital administrators.
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Medical Devices</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Pharma</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs">Health Tech</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Benefits Section -->
     <section class="bg-white section-padding">

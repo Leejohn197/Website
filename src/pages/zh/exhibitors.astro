@@ -12,15 +12,233 @@ import Footer from '../../components/common/Footer.astro';
   <Navbar />
   
   <main class="pt-20">
-    <!-- Page Header -->
-    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 text-center border-b-4 border-batik bg-batik">
+    <!-- Featured Events Section - Starts immediately after navbar -->
+    <section class="bg-gradient-to-br from-primary-900 to-primary-800 text-white section-padding border-b-4 border-batik">
       <div class="container-custom">
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-chinese">展商服务</h1>
-        <p class="text-primary-100 text-lg md:text-xl max-w-3xl mx-auto font-chinese">
-          向来自东南亚的5万多名商业专业人士展示您的产品和服务
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-center mb-4 font-chinese">
+          精选展会
+        </h2>
+        <p class="text-center text-primary-100 mb-12 max-w-2xl mx-auto font-chinese">
+          2026年雅加达国际会展中心即将举办的主要展会活动
         </p>
+
+        <!-- Row 1: First 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          <!-- Event 1: Tech Expo -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/tech-expo.jpg" alt="科技博览会" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                TECHNOLOGY
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">2026雅加达科技博览会</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">3月15-18日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会展中心（Kemayoran）</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              展示尖端电子产品、人工智能、物联网和数字创新。与科技行业领导者、初创企业和投资者建立联系。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">AI & 机器学习</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">物联网</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">云计算</span>
+            </div>
+          </div>
+
+          <!-- Event 2: Food & Beverage -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/food-beverage.jpg" alt="食品饮料展" class="w-full h-full object-cover" />
+              <div class="absolute top-2 right-2 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold">
+                FEATURED
+              </div>
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                F&B
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">印尼食品饮料展</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">4月5-8日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会议中心</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              探索印尼丰富的美食传统和国际美食趋势。从传统佳肴到创新饮料，与美食爱好者和行业专家见面。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">印尼美食</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">国际美食</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">饮料</span>
+            </div>
+          </div>
+
+          <!-- Event 3: Manufacturing -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/manufacturing.jpg" alt="制造业峰会" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                MANUFACTURING
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">东南亚制造业峰会</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">5月12-15日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会展中心（Kemayoran）</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              探索工业4.0、自动化和智能制造解决方案。展示重型机械、生产技术和供应链创新。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">自动化</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">工业4.0</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">机械</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Row 2: Next 3 Events -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Event 4: Textile & Fashion -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/textile-fashion.jpg" alt="纺织时尚展" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                FASHION
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">印尼纺织与时尚展</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">6月10-13日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会展中心（Kemayoran）</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              展示巴迪克、传统纺织品和现代时尚设计。与时装设计师、纺织品制造商和零售商建立联系。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">巴迪克</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">时装设计</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">纺织面料</span>
+            </div>
+          </div>
+
+          <!-- Event 5: Automotive -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/automotive.jpg" alt="汽车展" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                AUTOMOTIVE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">雅加达国际汽车展</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">7月20-23日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会议中心</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              展示最新汽车型号、电动车、摩托车和汽车配件。连接汽车制造商、经销商和汽车爱好者。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">电动汽车</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">新能源</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">汽车配件</span>
+            </div>
+          </div>
+
+          <!-- Event 6: Healthcare & Medical -->
+          <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all">
+            <div class="relative h-40 mb-4 rounded-lg overflow-hidden">
+              <img src="/images/events/healthcare.jpg" alt="医疗健康展" class="w-full h-full object-cover" />
+              <div class="absolute bottom-2 left-2 bg-accent-500 text-white px-3 py-1 rounded-md text-xs font-semibold">
+                HEALTHCARE
+              </div>
+            </div>
+            <h3 class="font-heading text-2xl font-bold mb-3 font-chinese">东南亚医疗健康博览会</h3>
+            <div class="space-y-2 mb-4">
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                </svg>
+                <span class="font-chinese">8月15-18日，2026</span>
+              </div>
+              <div class="flex items-center gap-2 text-primary-100">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                </svg>
+                <span class="font-chinese">雅加达会展中心（Kemayoran）</span>
+              </div>
+            </div>
+            <p class="text-primary-100 text-sm leading-relaxed mb-4 font-chinese">
+              展示医疗设备、制药产品和健康科技创新。与医疗专业人士、医院管理者和医疗器械供应商见面。
+            </p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">医疗设备</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">制药</span>
+              <span class="bg-white/20 px-3 py-1 rounded-full text-xs font-chinese">健康科技</span>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Benefits Section -->
     <section class="bg-white section-padding">
