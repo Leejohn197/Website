@@ -66,13 +66,13 @@ const featuredEvents = [
       <!-- Event Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredEvents.map(event => (
-          <EventCard {...event} />
+          <EventCard {...event} lang="en" />
         ))}
       </div>
 
       <!-- View All Events Button -->
       <div class="text-center mt-12">
-        <a href="/en/events" class="btn btn-primary inline-block">
+        <a href="/en/exhibitors" class="btn btn-primary inline-block">
           View All Events
         </a>
       </div>

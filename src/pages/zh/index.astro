@@ -66,13 +66,13 @@ const featuredEvents = [
       <!-- Event Cards Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {featuredEvents.map(event => (
-          <EventCard {...event} />
+          <EventCard {...event} lang="zh" />
         ))}
       </div>
 
       <!-- View All Events Button -->
       <div class="text-center mt-12">
-        <a href="/zh/events" class="btn btn-primary inline-block font-chinese">
+        <a href="/zh/exhibitors" class="btn btn-primary inline-block font-chinese">
           查看所有活动
         </a>
       </div>

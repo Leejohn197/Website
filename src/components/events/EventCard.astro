@@ -8,6 +8,7 @@ interface Props {
   slug: string;
   featured?: boolean;
   category?: string;
+  lang?: string;
 }
 
 const {
@@ -17,8 +18,16 @@ const {
   image,
   slug,
   featured = false,
-  category
+  category,
+  lang = 'en'
 } = Astro.props;
+
+// 多语言文本
+const learnMoreText = {
+  'en': 'Learn More',
+  'zh': '了解更多',
+  'id': 'Pelajari Lebih Lanjut'
+};
 ---
 
 <article class="group relative bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
@@ -74,10 +83,10 @@ const {
 
     <!-- Learn More 链接 -->
     <a 
-      href={`/en/events/${slug}`}
+      href={`/${lang}/exhibitors`}
       class="inline-flex items-center text-primary-500 font-semibold hover:text-primary-700 transition-colors group/link"
     >
-      <span>Learn More</span>
+      <span>{learnMoreText[lang]}</span>
       <svg class="ml-2 w-5 h-5 transition-transform group-hover/link:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
       </svg>
