@@ -92,3 +92,22 @@ const texts = navText[lang] || navText.en;
 
   </div>
 </nav>
+
+<script>
+  // 移动端菜单切换功能
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+    const navbarMenu = document.getElementById('navbar-sticky');
+    
+    if (toggleButton && navbarMenu) {
+      toggleButton.addEventListener('click', () => {
+        // 切换菜单显示状态
+        navbarMenu.classList.toggle('hidden');
+        
+        // 更新 aria-expanded 属性
+        const isExpanded = !navbarMenu.classList.contains('hidden');
+        toggleButton.setAttribute('aria-expanded', isExpanded.toString());
+      });
+    }
+  });
+</script>
