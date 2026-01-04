@@ -1,0 +1,99 @@
+---
+// EventCard 组件 - 展览活动卡片
+interface Props {
+  title: string;
+  date: string;
+  location: string;
+  image: string;
+  slug: string;
+  featured?: boolean;
+  category?: string;
+}
+
+const {
+  title,
+  date,
+  location,
+  image,
+  slug,
+  featured = false,
+  category
+} = Astro.props;
+---
+
+<article class="group relative bg-white rounded-xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2">
+  <!-- 图片容器 -->
+  <div class="relative h-48 md:h-56 overflow-hidden bg-neutral-200">
+    <!-- 展览封面图 -->
+    <img 
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      loading="lazy"
+    />
+    
+    <!-- 渐变遮罩 -->
+    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+
+    <!-- 日期标签 - 悬浮在左上角 -->
+    <div class="absolute top-4 left-4 bg-accent-500 text-white px-4 py-2 rounded-lg shadow-lg">
+      <div class="text-xs font-semibold uppercase tracking-wide">Date</div>
+      <div class="text-sm font-bold">{date}</div>
+    </div>
+
+    <!-- Featured 徽章 (如果是精选活动) -->
+    {featured && (
+      <div class="absolute top-4 right-4 bg-secondary-500 text-neutral-900 px-3 py-1 rounded-full text-xs font-bold uppercase shadow-lg">
+        Featured
+      </div>
+    )}
+
+    <!-- 分类标签 - 悬浮在底部 -->
+    {category && (
+      <div class="absolute bottom-4 left-4 bg-primary-500 text-white px-3 py-1 rounded-md text-xs font-semibold uppercase">
+        {category}
+      </div>
+    )}
+  </div>
+
+  <!-- 内容区域 -->
+  <div class="p-6">
+    <!-- 展览名称 -->
+    <h3 class="font-heading text-xl md:text-2xl font-bold text-primary-700 mb-3 line-clamp-2 group-hover:text-primary-500 transition-colors">
+      {title}
+    </h3>
+
+    <!-- 地点信息 -->
+    <div class="flex items-center text-neutral-600 mb-4">
+      <svg class="w-5 h-5 mr-2 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+      </svg>
+      <span class="text-sm md:text-base font-medium">{location}</span>
+    </div>
+
+    <!-- Learn More 链接 -->
+    <a 
+      href={`/en/events/${slug}`}
+      class="inline-flex items-center text-primary-500 font-semibold hover:text-primary-700 transition-colors group/link"
+    >
+      <span>Learn More</span>
+      <svg class="ml-2 w-5 h-5 transition-transform group-hover/link:translate-x-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- 悬停时的边框效果 -->
+  <div class="absolute inset-0 border-2 border-transparent group-hover:border-primary-500 rounded-xl transition-colors pointer-events-none"></div>
+</article>
+
+<style>
+  /* 限制标题为两行，超出显示省略号 */
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

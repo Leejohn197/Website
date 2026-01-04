@@ -1,0 +1,94 @@
+---
+// Hero 组件 - 雅加达展览官网首页 Hero 区域
+interface Props {
+  title?: string;
+  subtitle?: string;
+  ctaPrimary?: string;
+  ctaSecondary?: string;
+  ctaPrimaryLink?: string;
+  ctaSecondaryLink?: string;
+  backgroundImage?: string;
+}
+
+const {
+  title = "Jakarta International Expo 2026",
+  subtitle = "Connecting Business in Southeast Asia",
+  ctaPrimary = "Book a Stand",
+  ctaSecondary = "Visitor Registration",
+  ctaPrimaryLink = "/en/exhibitors",
+  ctaSecondaryLink = "/en/contact",
+  backgroundImage = "/images/jakarta-skyline.jpg"
+} = Astro.props;
+---
+
+<section class="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- 背景图片 - 雅加达天际线 (SCBD/Monas) -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src={backgroundImage}
+      alt="Jakarta Skyline - SCBD and Monas"
+      class="w-full h-full object-cover"
+    />
+    
+    <!-- 黑色遮罩层 - 确保文字清晰可读 -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70"></div>
+    
+    <!-- Batik 纹理叠加层 (可选) -->
+    <div class="absolute inset-0 bg-batik opacity-30"></div>
+  </div>
+
+  <!-- 内容区域 -->
+  <div class="relative z-10 container-custom text-center px-4 py-20">
+    <!-- 主标题 -->
+    <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-white mb-6 animate-fade-in">
+      {title}
+    </h1>
+
+    <!-- 副标题 -->
+    <p class="font-sans text-lg sm:text-xl md:text-2xl lg:text-3xl text-white/90 mb-12 max-w-4xl mx-auto animate-slide-up">
+      {subtitle}
+    </p>
+
+    <!-- CTA 按钮组 -->
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-slide-up" style="animation-delay: 0.2s;">
+      <!-- 主要 CTA - Book a Stand -->
+      <a 
+        href={ctaPrimaryLink}
+        class="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-neutral-900 bg-secondary-500 rounded-lg overflow-hidden transition-all duration-300 hover:bg-secondary-600 hover:scale-105 hover:shadow-2xl hover:shadow-secondary-500/50 w-full sm:w-auto"
+      >
+        <span class="relative z-10">{ctaPrimary}</span>
+        <svg class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+
+      <!-- 次要 CTA - Visitor Registration -->
+      <a 
+        href={ctaSecondaryLink}
+        class="group inline-flex items-center justify-center px-8 py-4 text-lg font-semibold text-white bg-white/10 backdrop-blur-sm border-2 border-white rounded-lg transition-all duration-300 hover:bg-white hover:text-primary-500 hover:scale-105 hover:shadow-2xl w-full sm:w-auto"
+      >
+        <span class="relative z-10">{ctaSecondary}</span>
+        <svg class="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+
+    <!-- 向下滚动提示 (可选) -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <svg class="w-8 h-8 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* 确保背景图片在移动端也能正确显示 */
+  @media (max-width: 640px) {
+    section {
+      min-height: 100vh;
+      min-height: 100svh; /* 支持移动端浏览器 */
+    }
+  }
+</style>

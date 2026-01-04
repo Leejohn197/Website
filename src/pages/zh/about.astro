@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/common/Footer.astro';
+---
+
+<Layout 
+  title="关于我们 | Jakarta International Expo 2026"
+  description="了解雅加达国际博览会 - 东南亚领先的贸易展览平台，自2020年起连接各类企业。"
+  lang="zh"
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- Page Header -->
+    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 text-center border-b-4 border-batik bg-batik">
+      <div class="container-custom">
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6 font-chinese">关于雅加达博览会</h1>
+        <p class="text-primary-100 text-lg md:text-xl max-w-3xl mx-auto font-chinese">
+          连接商业，创造机遇，塑造东南亚贸易的未来。
+        </p>
+      </div>
+    </div>
+
+    <!-- Content Section -->
+    <section class="bg-white section-padding">
+      <div class="container-custom">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-900 mb-6 font-chinese">
+              关于我们
+            </h2>
+            <div class="prose prose-lg text-neutral-600 space-y-4 font-chinese">
+              <p>
+                雅加达国际博览会是东南亚首屈一指的贸易展览和商业活动平台。自2020年成立以来，我们致力于将全球企业与充满活力的印尼及东南亚市场连接起来。
+              </p>
+              <p>
+                我们的活动吸引了来自30多个国家的数千名参展商和访客，为创新、网络建设和业务增长创造了一个充满活力的市场。
+              </p>
+              <p>
+                我们位于雅加达商业区的中心地带，提供世界一流的设施和服务，确保每场展览都能为所有参与者带来最大价值。
+              </p>
+            </div>
+          </div>
+          <div class="bg-neutral-100 rounded-2xl p-8 border-l-4 border-secondary-500">
+            <h3 class="font-heading text-2xl font-bold text-primary-900 mb-6 font-chinese">我们的使命</h3>
+            <ul class="space-y-4">
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700 font-chinese">促进国际贸易和商业合作</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700 font-chinese">展示印尼创新和卓越成就</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700 font-chinese">创造可持续的网络机会</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <svg class="w-6 h-6 text-secondary-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <span class="text-neutral-700 font-chinese">推动该地区的经济增长</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-batik-subtle bg-secondary-50 section-padding">
+      <div class="container-custom">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary-900 text-center mb-12 font-chinese">
+          数据说话
+        </h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="text-5xl font-heading font-bold text-primary-600 mb-2">5万+</div>
+            <div class="text-neutral-600 font-chinese">年度访客</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl font-heading font-bold text-primary-600 mb-2">500+</div>
+            <div class="text-neutral-600 font-chinese">参展商</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl font-heading font-bold text-primary-600 mb-2">30+</div>
+            <div class="text-neutral-600 font-chinese">国家</div>
+          </div>
+          <div class="text-center">
+            <div class="text-5xl font-heading font-bold text-primary-600 mb-2">2万</div>
+            <div class="text-neutral-600 font-chinese">平方米空间</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="bg-primary-900 text-white section-padding border-t-4 border-batik">
+      <div class="container-custom text-center">
+        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6 font-chinese">
+          准备加入我们？
+        </h2>
+        <p class="text-primary-100 text-lg mb-8 max-w-2xl mx-auto font-chinese">
+          成为东南亚首屈一指的贸易展览平台的一部分
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/zh/exhibitors" class="btn bg-secondary-500 hover:bg-secondary-600 text-neutral-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all">
+            成为参展商
+          </a>
+          <a href="/zh/contact" class="btn bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all">
+            联系我们
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</Layout>

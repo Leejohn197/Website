@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import ContactUsComponent from '../../components/contact/ContactUs.astro';
+import Footer from '../../components/common/Footer.astro';
+
+const pageTitle = "联系我们 | Jakarta International Expo 2026";
+const pageDesc = "联系雅加达国际博览会2026组织者。预订展位、注册为访客，或通过WhatsApp、电子邮件或电话向我们发送咨询。";
+---
+
+<Layout 
+  title={pageTitle}
+  description={pageDesc}
+  keywords={["联系雅加达博览会", "展览咨询", "雅加达贸易展地点"]}
+  lang="zh"
+>
+  <Navbar />
+  
+  <main class="pt-20">
+    <!-- 简单的页面标题 Header -->
+    <div class="bg-primary-900 text-white py-16 text-center border-b-4 border-batik bg-batik">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold mb-4 font-chinese">联系我们</h1>
+      <p class="text-primary-100 max-w-2xl mx-auto px-4 font-chinese">
+        我们期待您的联系。与我们一起探索东南亚的商业机会。
+      </p>
+    </div>
+
+    <!-- 联系组件 -->
+    <ContactUsComponent lang="zh" />
+  </main>
+
+  <Footer />
+</Layout>

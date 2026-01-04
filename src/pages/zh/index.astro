@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Hero from '../../components/home/Hero.astro';
+import EventCard from '../../components/events/EventCard.astro';
+import Footer from '../../components/common/Footer.astro';
+
+// 示例活动数据
+const featuredEvents = [
+  {
+    title: "2026雅加达科技博览会",
+    date: "3月15-18日",
+    location: "雅加达会展中心（Kemayoran）",
+    image: "/images/events/tech-expo.jpg",
+    slug: "jakarta-tech-expo-2026",
+    featured: true,
+    category: "Technology"
+  },
+  {
+    title: "印尼食品饮料展",
+    date: "4月5-8日",
+    location: "雅加达会议中心",
+    image: "/images/events/food-beverage.jpg",
+    slug: "indonesia-food-beverage-fair",
+    featured: true,
+    category: "F&B"
+  },
+  {
+    title: "东南亚制造业峰会",
+    date: "5月12-15日",
+    location: "雅加达会展中心（Kemayoran）",
+    image: "/images/events/manufacturing.jpg",
+    slug: "sea-manufacturing-summit",
+    featured: false,
+    category: "Manufacturing"
+  }
+];
+---
+
+<Layout lang="zh">
+  <Navbar />
+
+  <!-- Hero Section -->
+  <Hero 
+    title="2026雅加达国际博览会"
+    subtitle="连接东南亚商业"
+    ctaPrimary="预订展位"
+    ctaSecondary="访客注册"
+    ctaPrimaryLink="/zh/exhibitors"
+    ctaSecondaryLink="/zh/contact"
+    backgroundImage="/images/jakarta-skyline.jpg"
+  />
+
+  <!-- Featured Events Section -->
+  <section class="bg-batik-subtle bg-secondary-50 section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary-500 mb-4 font-chinese">
+          精选活动
+        </h2>
+        <p class="font-sans text-lg text-neutral-600 max-w-2xl mx-auto font-chinese">
+          探索即将举行的展览和贸易展，在东南亚首屈一指的商业中心
+        </p>
+      </div>
+
+      <!-- Event Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredEvents.map(event => (
+          <EventCard {...event} />
+        ))}
+      </div>
+
+      <!-- View All Events Button -->
+      <div class="text-center mt-12">
+        <a href="/zh/events" class="btn btn-primary inline-block font-chinese">
+          查看所有活动
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="bg-white section-padding">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="animate-slide-up">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">5万+</div>
+          <div class="text-sm md:text-base text-neutral-600 font-chinese">访客</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">500+</div>
+          <div class="text-sm md:text-base text-neutral-600 font-chinese">参展商</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">30+</div>
+          <div class="text-sm md:text-base text-neutral-600 font-chinese">国家</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.3s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">2万</div>
+          <div class="text-sm md:text-base text-neutral-600 font-chinese">平方米展区</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-batik bg-gradient-to-br from-primary-500 to-primary-700 text-white section-padding border-t-4 border-batik">
+    <div class="container-custom text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4 font-chinese">
+        准备加入我们？
+      </h2>
+      <p class="font-sans text-lg mb-8 max-w-2xl mx-auto text-primary-100 font-chinese">
+        成为东南亚最大贸易博览会的一部分，与数千个商业机会建立联系。
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/zh/exhibitors" class="btn bg-secondary-500 hover:bg-secondary-600 text-neutral-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all font-chinese">
+          成为参展商
+        </a>
+        <a href="/zh/contact" class="btn bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all font-chinese">
+          联系我们
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

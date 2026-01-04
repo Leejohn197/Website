@@ -1,0 +1,127 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Hero from '../../components/home/Hero.astro';
+import EventCard from '../../components/events/EventCard.astro';
+import Footer from '../../components/common/Footer.astro';
+
+// 示例活动数据
+const featuredEvents = [
+  {
+    title: "Pameran Teknologi Jakarta 2026",
+    date: "15-18 Mar",
+    location: "JIExpo Kemayoran",
+    image: "/images/events/tech-expo.jpg",
+    slug: "jakarta-tech-expo-2026",
+    featured: true,
+    category: "Technology"
+  },
+  {
+    title: "Pameran Makanan & Minuman Indonesia",
+    date: "5-8 Apr",
+    location: "Jakarta Convention Center",
+    image: "/images/events/food-beverage.jpg",
+    slug: "indonesia-food-beverage-fair",
+    featured: true,
+    category: "F&B"
+  },
+  {
+    title: "Summit Manufaktur Asia Tenggara",
+    date: "12-15 Mei",
+    location: "JIExpo Kemayoran",
+    image: "/images/events/manufacturing.jpg",
+    slug: "sea-manufacturing-summit",
+    featured: false,
+    category: "Manufacturing"
+  }
+];
+---
+
+<Layout lang="id">
+  <Navbar />
+
+  <!-- Hero Section -->
+  <Hero 
+    title="Pameran Internasional Jakarta 2026"
+    subtitle="Menghubungkan Bisnis di Asia Tenggara"
+    ctaPrimary="Pesan Stan"
+    ctaSecondary="Pendaftaran Pengunjung"
+    ctaPrimaryLink="/id/exhibitors"
+    ctaSecondaryLink="/id/contact"
+    backgroundImage="/images/jakarta-skyline.jpg"
+  />
+
+  <!-- Featured Events Section -->
+  <section class="bg-batik-subtle bg-secondary-50 section-padding">
+    <div class="container-custom">
+      <div class="text-center mb-12">
+        <h2 class="font-heading text-4xl md:text-5xl font-bold text-primary-500 mb-4">
+          Acara Unggulan
+        </h2>
+        <p class="font-sans text-lg text-neutral-600 max-w-2xl mx-auto">
+          Temukan pameran dan pameran dagang mendatang di pusat bisnis utama Asia Tenggara
+        </p>
+      </div>
+
+      <!-- Event Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {featuredEvents.map(event => (
+          <EventCard {...event} />
+        ))}
+      </div>
+
+      <!-- View All Events Button -->
+      <div class="text-center mt-12">
+        <a href="/id/events" class="btn btn-primary inline-block">
+          Lihat Semua Acara
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="bg-white section-padding">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="animate-slide-up">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">50K+</div>
+          <div class="text-sm md:text-base text-neutral-600">Pengunjung</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.1s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">500+</div>
+          <div class="text-sm md:text-base text-neutral-600">Peserta Pameran</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.2s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">30+</div>
+          <div class="text-sm md:text-base text-neutral-600">Negara</div>
+        </div>
+        <div class="animate-slide-up" style="animation-delay: 0.3s;">
+          <div class="text-4xl md:text-5xl font-heading font-bold text-primary-500 mb-2">20K</div>
+          <div class="text-sm md:text-base text-neutral-600">m² Area</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-batik bg-gradient-to-br from-primary-500 to-primary-700 text-white section-padding border-t-4 border-batik">
+    <div class="container-custom text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold mb-4">
+        Siap Bergabung?
+      </h2>
+      <p class="font-sans text-lg mb-8 max-w-2xl mx-auto text-primary-100">
+        Jadilah bagian dari pameran dagang terbesar di Asia Tenggara dan terhubung dengan ribuan peluang bisnis.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="/id/exhibitors" class="btn bg-secondary-500 hover:bg-secondary-600 text-neutral-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all">
+          Jadi Peserta Pameran
+        </a>
+        <a href="/id/contact" class="btn bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all">
+          Hubungi Kami
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

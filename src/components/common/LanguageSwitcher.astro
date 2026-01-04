@@ -1,0 +1,72 @@
+---
+// LanguageSwitcher.astro - 语言切换器组件
+// 自动识别当前语言和路径，生成正确的切换链接
+
+// 获取当前 URL
+const currentPath = Astro.url.pathname;
+
+// 定义支持的语言
+const languages = [
+  { code: 'en', label: 'EN' },
+  { code: 'id', label: 'ID' },
+  { code: 'zh', label: 'ZH' }
+];
+
+// 从 URL 中提取当前语言和路径
+function getCurrentLocaleAndPath(pathname: string): { locale: string; path: string } {
+  const segments = pathname.split('/').filter(Boolean);
+  
+  // 检查第一个段是否是语言代码
+  const firstSegment = segments[0];
+  const isLocale = ['en', 'id', 'zh'].includes(firstSegment);
+  
+  if (isLocale) {
+    // URL 格式: /en/about -> locale=en, path=about
+    const locale = firstSegment;
+    const path = segments.slice(1).join('/');
+    return { locale, path };
+  } else {
+    // 如果没有语言前缀，默认为英语
+    return { locale: 'en', path: segments.join('/') };
+  }
+}
+
+// 生成切换到指定语言的 URL
+function getRelativeLocaleUrl(targetLocale: string, currentPathname: string): string {
+  const { path } = getCurrentLocaleAndPath(currentPathname);
+  
+  // 如果路径为空（首页），返回语言首页
+  if (!path) {
+    return `/${targetLocale}/`;
+  }
+  
+  // 否则，保持路径，只切换语言
+  return `/${targetLocale}/${path}`;
+}
+
+const { locale: currentLocale } = getCurrentLocaleAndPath(currentPath);
+---
+
+<div class="flex items-center gap-2 text-sm font-medium">
+  {languages.map((lang, index) => (
+    <>
+      <a
+        href={getRelativeLocaleUrl(lang.code, currentPath)}
+        class={`
+          transition-colors duration-200
+          ${currentLocale === lang.code 
+            ? 'text-primary-700 font-bold' 
+            : 'text-neutral-400 hover:text-primary-600'
+          }
+        `}
+        aria-label={`Switch to ${lang.label}`}
+        aria-current={currentLocale === lang.code ? 'true' : undefined}
+      >
+        {lang.label}
+      </a>
+      {index < languages.length - 1 && (
+        <span class="text-neutral-300">|</span>
+      )}
+    </>
+  ))}
+</div>
