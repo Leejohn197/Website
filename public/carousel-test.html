@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>轮播图测试</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+  <div class="max-w-4xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8 text-center">轮播图独立测试</h1>
+    
+    <div class="event-carousel relative w-full overflow-hidden rounded-2xl shadow-2xl" data-autoplay-interval="5000">
+      <!-- Carousel Container -->
+      <div class="carousel-track flex transition-transform duration-700 ease-in-out">
+        <div class="carousel-slide min-w-full h-[400px] md:h-[500px] lg:h-[600px] relative">
+          <img 
+            src="/images/events/01.jpg" 
+            alt="Event 1"
+            class="w-full h-full object-cover"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        </div>
+        <div class="carousel-slide min-w-full h-[400px] md:h-[500px] lg:h-[600px] relative">
+          <img 
+            src="/images/events/02.jpg" 
+            alt="Event 2"
+            class="w-full h-full object-cover"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        </div>
+        <div class="carousel-slide min-w-full h-[400px] md:h-[500px] lg:h-[600px] relative">
+          <img 
+            src="/images/events/03.jpg" 
+            alt="Event 3"
+            class="w-full h-full object-cover"
+          >
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+        </div>
+      </div>
+
+      <!-- Navigation Arrows -->
+      <button 
+        class="carousel-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+        aria-label="Previous slide"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+      
+      <button 
+        class="carousel-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white text-gray-900 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-10"
+        aria-label="Next slide"
+      >
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <!-- Indicators -->
+      <div class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" data-index="0"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" data-index="1"></button>
+        <button class="carousel-indicator w-3 h-3 rounded-full bg-white/50 hover:bg-white/80 transition-all duration-300" data-index="2"></button>
+      </div>
+    </div>
+
+    <div class="mt-8 p-4 bg-white rounded-lg shadow">
+      <h2 class="text-xl font-bold mb-4">调试信息</h2>
+      <div id="debug-info" class="space-y-2 text-sm font-mono"></div>
+    </div>
+  </div>
+
+  <script>
+    // Debug logging
+    const debugInfo = document.getElementById('debug-info');
+    function log(message) {
+      const p = document.createElement('p');
+      p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      debugInfo.appendChild(p);
+      console.log(message);
+    }
+
+    log('页面加载完成');
+
+    class EventCarousel {
+      constructor(element) {
+        log('初始化轮播图...');
+        this.carousel = element;
+        this.track = this.carousel.querySelector('.carousel-track');
+        this.slides = this.carousel.querySelectorAll('.carousel-slide');
+        this.prevBtn = this.carousel.querySelector('.carousel-prev');
+        this.nextBtn = this.carousel.querySelector('.carousel-next');
+        this.indicators = this.carousel.querySelectorAll('.carousel-indicator');
+        
+        log(`找到 ${this.slides.length} 张幻灯片`);
+        
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.autoplayInterval = parseInt(this.carousel.dataset.autoplayInterval) || 5000;
+        this.autoplayTimer = null;
+        
+        this.init();
+      }
+      
+      init() {
+        log('设置事件监听器...');
+        this.updateIndicators();
+        
+        this.prevBtn.addEventListener('click', () => {
+          log('点击上一张');
+          this.prev();
+        });
+        
+        this.nextBtn.addEventListener('click', () => {
+          log('点击下一张');
+          this.next();
+        });
+        
+        this.indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            log(`点击指示器 ${index + 1}`);
+            this.goToSlide(index);
+          });
+        });
+        
+        log('启动自动播放...');
+        this.startAutoplay();
+      }
+      
+      goToSlide(index) {
+        this.currentIndex = index;
+        this.updateCarousel();
+      }
+      
+      next() {
+        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        this.updateCarousel();
+      }
+      
+      prev() {
+        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+        this.updateCarousel();
+      }
+      
+      updateCarousel() {
+        const offset = -this.currentIndex * 100;
+        this.track.style.transform = `translateX(${offset}%)`;
+        log(`切换到幻灯片 ${this.currentIndex + 1}, offset: ${offset}%`);
+        this.updateIndicators();
+      }
+      
+      updateIndicators() {
+        this.indicators.forEach((indicator, index) => {
+          if (index === this.currentIndex) {
+            indicator.classList.remove('bg-white/50');
+            indicator.classList.add('bg-white', 'scale-125');
+          } else {
+            indicator.classList.remove('bg-white', 'scale-125');
+            indicator.classList.add('bg-white/50');
+          }
+        });
+      }
+      
+      startAutoplay() {
+        this.pauseAutoplay();
+        this.autoplayTimer = setInterval(() => {
+          log('自动播放切换');
+          this.next();
+        }, this.autoplayInterval);
+      }
+      
+      pauseAutoplay() {
+        if (this.autoplayTimer) {
+          clearInterval(this.autoplayTimer);
+          this.autoplayTimer = null;
+        }
+      }
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+      log('DOM 加载完成，查找轮播图...');
+      const carousels = document.querySelectorAll('.event-carousel');
+      log(`找到 ${carousels.length} 个轮播图元素`);
+      carousels.forEach((carousel, index) => {
+        log(`初始化轮播图 #${index + 1}`);
+        new EventCarousel(carousel);
+      });
+    });
+  </script>
+</body>
+</html>

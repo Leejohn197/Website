@@ -2,6 +2,17 @@
 import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/common/Footer.astro';
+import EventCarousel from '../../components/EventCarousel.astro';
+
+const eventImages = [
+  '/images/events/01.jpg',
+  '/images/events/02.jpg',
+  '/images/events/03.jpg',
+  '/images/events/04.jpg',
+  '/images/events/05.jpg',
+  '/images/events/07.jpg',
+  '/images/events/08.jpg',
+];
 ---
 
 <Layout 
@@ -12,15 +23,30 @@ import Footer from '../../components/common/Footer.astro';
   <Navbar />
   
   <main class="pt-20">
-    <!-- Page Header -->
-    <div class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-20 text-center border-b-4 border-batik bg-batik">
+    <!-- Event Gallery Carousel Section -->
+    <section class="bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 section-padding border-b-4 border-batik">
       <div class="container-custom">
-        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Tentang Jakarta Expo</h1>
-        <p class="text-primary-100 text-lg md:text-xl max-w-3xl mx-auto">
-          Menghubungkan bisnis, menciptakan peluang, membentuk masa depan perdagangan Asia Tenggara.
-        </p>
+        <div class="text-center mb-12">
+          <h1 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-white">
+            Galeri Acara Kami
+          </h1>
+          <p class="text-primary-100 text-lg max-w-2xl mx-auto">
+            Jelajahi momen-momen menarik dari pameran kami sebelumnya dan saksikan kekuatan kolaborasi bisnis dan inovasi
+          </p>
+        </div>
+        
+        <EventCarousel images={eventImages} autoplayInterval={5000} />
+        
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <a href="/id/exhibitors" class="btn bg-secondary-500 hover:bg-secondary-600 text-neutral-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all">
+            Jadi Peserta Pameran
+          </a>
+          <a href="/id/contact" class="btn bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all">
+            Hubungi Kami
+          </a>
+        </div>
       </div>
-    </div>
+    </section>
 
     <!-- Content Section -->
     <section class="bg-white section-padding">
@@ -102,25 +128,6 @@ import Footer from '../../components/common/Footer.astro';
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="bg-primary-900 text-white section-padding border-t-4 border-batik">
-      <div class="container-custom text-center">
-        <h2 class="font-heading text-3xl md:text-4xl font-bold mb-6">
-          Siap Bergabung?
-        </h2>
-        <p class="text-primary-100 text-lg mb-8 max-w-2xl mx-auto">
-          Jadilah bagian dari platform pameran perdagangan terkemuka di Asia Tenggara
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/id/exhibitors" class="btn bg-secondary-500 hover:bg-secondary-600 text-neutral-900 px-8 py-4 text-lg font-semibold rounded-lg shadow-lg transition-all">
-            Jadi Peserta Pameran
-          </a>
-          <a href="/id/contact" class="btn bg-white/10 hover:bg-white/20 text-white border-2 border-white px-8 py-4 text-lg font-semibold rounded-lg transition-all">
-            Hubungi Kami
-          </a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <Footer />
