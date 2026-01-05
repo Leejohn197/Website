@@ -56,38 +56,103 @@ const texts = navText[lang] || navText.en;
     </a>
 
     <div class="flex md:order-2 space-x-3 md:space-x-4 rtl:space-x-reverse items-center">
-        <!-- 语言切换器 -->
-        <LanguageSwitcher />
+        <!-- 桌面端：语言切换器 -->
+        <div class="hidden md:flex">
+          <LanguageSwitcher />
+        </div>
         
         <!-- 分隔线 -->
         <div class="hidden md:block h-6 w-px bg-neutral-300"></div>
         
-        <a href={navLinks.exhibitors} class="text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
+        <!-- 桌面端：CTA 按钮 -->
+        <a href={navLinks.exhibitors} class="hidden md:inline-block text-white bg-[#0e2c4c] hover:bg-[#0a2438] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
           {texts.bookStand}
         </a>
-        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200" aria-controls="navbar-sticky" aria-expanded="false">
+        
+        <!-- 移动端：汉堡菜单按钮 -->
+        <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-500 rounded-lg md:hidden hover:bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 transition-colors" aria-controls="navbar-sticky" aria-expanded="false">
           <span class="sr-only">Open main menu</span>
-          <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <!-- 汉堡图标 -->
+          <svg class="w-5 h-5 hamburger-icon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
               <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+          </svg>
+          <!-- 关闭图标 -->
+          <svg class="w-5 h-5 close-icon hidden" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
           </svg>
         </button>
     </div>
 
+    <!-- 移动端菜单 - 完全复刻桌面端样式 -->
     <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-      <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-100 rounded-lg bg-neutral-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white">
+      <!-- 桌面端导航 -->
+      <ul class="hidden md:flex md:space-x-8 rtl:space-x-reverse font-medium">
         <li>
-          <a href={navLinks.home} class="block py-2 px-3 text-primary-700 bg-transparent rounded md:p-0 font-bold" aria-current="page">{texts.home}</a>
+          <a href={navLinks.home} class="block py-2 text-primary-700 font-bold hover:text-primary-600 transition-colors" aria-current="page">{texts.home}</a>
         </li>
         <li>
-          <a href={navLinks.about} class="block py-2 px-3 text-neutral-700 rounded hover:bg-neutral-100 md:hover:bg-transparent md:hover:text-primary-600 md:p-0 transition-colors">{texts.about}</a>
+          <a href={navLinks.about} class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">{texts.about}</a>
         </li>
         <li>
-          <a href={navLinks.exhibitors} class="block py-2 px-3 text-neutral-700 rounded hover:bg-neutral-100 md:hover:bg-transparent md:hover:text-primary-600 md:p-0 transition-colors">{texts.exhibitors}</a>
+          <a href={navLinks.exhibitors} class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">{texts.exhibitors}</a>
         </li>
         <li>
-          <a href={navLinks.contact} class="block py-2 px-3 text-neutral-700 rounded hover:bg-neutral-100 md:hover:bg-transparent md:hover:text-primary-600 md:p-0 transition-colors">{texts.contact}</a>
+          <a href={navLinks.contact} class="block py-2 text-neutral-700 hover:text-primary-600 transition-colors">{texts.contact}</a>
         </li>
       </ul>
+
+      <!-- 移动端菜单内容 - 白色背景，复刻桌面端 -->
+      <div class="md:hidden w-full bg-white shadow-lg rounded-b-lg">
+        <!-- 导航链接 -->
+        <ul class="flex flex-col py-4 font-medium border-b border-neutral-100">
+          <li>
+            <a href={navLinks.home} class="block py-3 px-6 text-primary-700 font-bold hover:bg-neutral-50 transition-colors" aria-current="page">{texts.home}</a>
+          </li>
+          <li>
+            <a href={navLinks.about} class="block py-3 px-6 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors">{texts.about}</a>
+          </li>
+          <li>
+            <a href={navLinks.exhibitors} class="block py-3 px-6 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors">{texts.exhibitors}</a>
+          </li>
+          <li>
+            <a href={navLinks.contact} class="block py-3 px-6 text-neutral-700 hover:bg-neutral-50 hover:text-primary-600 transition-colors">{texts.contact}</a>
+          </li>
+        </ul>
+
+        <!-- 语言切换器 - 移动端 -->
+        <div class="py-4 px-6 border-b border-neutral-100">
+          <div class="flex items-center gap-3 text-sm font-medium">
+            <span class="text-neutral-500 text-xs uppercase tracking-wide">Language:</span>
+            <a
+              href={`/en/${lang === 'en' ? '' : Astro.url.pathname.split('/').slice(2).join('/')}`}
+              class={`transition-colors duration-200 ${lang === 'en' ? 'text-primary-700 font-bold' : 'text-neutral-400 hover:text-primary-600'}`}
+            >
+              EN
+            </a>
+            <span class="text-neutral-300">|</span>
+            <a
+              href={`/id/${lang === 'id' ? '' : Astro.url.pathname.split('/').slice(2).join('/')}`}
+              class={`transition-colors duration-200 ${lang === 'id' ? 'text-primary-700 font-bold' : 'text-neutral-400 hover:text-primary-600'}`}
+            >
+              ID
+            </a>
+            <span class="text-neutral-300">|</span>
+            <a
+              href={`/zh/${lang === 'zh' ? '' : Astro.url.pathname.split('/').slice(2).join('/')}`}
+              class={`transition-colors duration-200 ${lang === 'zh' ? 'text-primary-700 font-bold' : 'text-neutral-400 hover:text-primary-600'}`}
+            >
+              ZH
+            </a>
+          </div>
+        </div>
+
+        <!-- CTA 按钮 - 移动端 -->
+        <div class="py-4 px-6">
+          <a href={navLinks.exhibitors} class="block w-full text-center text-white bg-[#0e2c4c] hover:bg-[#0a2438] focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-3 shadow-md hover:shadow-lg transition-all">
+            {texts.bookStand}
+          </a>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -98,15 +163,40 @@ const texts = navText[lang] || navText.en;
   document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
     const navbarMenu = document.getElementById('navbar-sticky');
+    const hamburgerIcon = toggleButton?.querySelector('.hamburger-icon');
+    const closeIcon = toggleButton?.querySelector('.close-icon');
     
-    if (toggleButton && navbarMenu) {
+    if (toggleButton && navbarMenu && hamburgerIcon && closeIcon) {
       toggleButton.addEventListener('click', () => {
         // 切换菜单显示状态
+        const isHidden = navbarMenu.classList.contains('hidden');
         navbarMenu.classList.toggle('hidden');
         
+        // 切换图标
+        hamburgerIcon.classList.toggle('hidden', !isHidden);
+        closeIcon.classList.toggle('hidden', isHidden);
+        
         // 更新 aria-expanded 属性
-        const isExpanded = !navbarMenu.classList.contains('hidden');
-        toggleButton.setAttribute('aria-expanded', isExpanded.toString());
+        toggleButton.setAttribute('aria-expanded', isHidden.toString());
+        
+        // 防止背景滚动（可选）
+        if (isHidden) {
+          document.body.style.overflow = 'hidden';
+        } else {
+          document.body.style.overflow = '';
+        }
+      });
+
+      // 点击菜单链接后自动关闭菜单
+      const menuLinks = navbarMenu.querySelectorAll('a');
+      menuLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          navbarMenu.classList.add('hidden');
+          hamburgerIcon.classList.remove('hidden');
+          closeIcon.classList.add('hidden');
+          toggleButton.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
       });
     }
   });
