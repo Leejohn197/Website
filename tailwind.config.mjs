@@ -276,6 +276,44 @@ export default {
 						) 1
 					`,
 				},
+
+				// 深海军蓝底色 + 隐约的蜡染（Batik）纹理 - 用于 CTA 区域
+				'.bg-batik-navy': {
+					backgroundColor: '#0e2c4c',
+					backgroundImage: `
+						radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 0%, transparent 50%),
+						radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.02) 0%, transparent 50%),
+						repeating-linear-gradient(
+							45deg,
+							transparent,
+							transparent 35px,
+							rgba(255, 255, 255, 0.015) 35px,
+							rgba(255, 255, 255, 0.015) 70px
+						),
+						repeating-linear-gradient(
+							-45deg,
+							transparent,
+							transparent 35px,
+							rgba(255, 255, 255, 0.015) 35px,
+							rgba(255, 255, 255, 0.015) 70px
+						),
+						radial-gradient(circle at 50% 50%, rgba(212, 165, 116, 0.025) 1px, transparent 1px),
+						radial-gradient(circle at 25% 25%, rgba(212, 165, 116, 0.02) 1px, transparent 1px),
+						radial-gradient(circle at 75% 75%, rgba(212, 165, 116, 0.02) 1px, transparent 1px),
+						linear-gradient(
+							0deg,
+							rgba(160, 82, 45, 0.02) 1px,
+							transparent 1px
+						),
+						linear-gradient(
+							90deg,
+							rgba(160, 82, 45, 0.02) 1px,
+							transparent 1px
+						)
+					`,
+					backgroundSize: '100% 100%, 100% 100%, 70px 70px, 70px 70px, 40px 40px, 60px 60px, 80px 80px, 100px 100px, 100px 100px',
+					backgroundPosition: '0 0, 0 0, 0 0, 0 0, 0 0, 10px 10px, 20px 20px, 0 0, 0 0',
+				},
 			};
 
 			// 自定义组件类
